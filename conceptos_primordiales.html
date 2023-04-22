@@ -1,0 +1,326 @@
+<meta charset="UTF-8">
+<h1>ejercicio puntaje futbol</h1>
+calcular los puntos de un equipo de futbol
+
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+var victorias = parseInt(prompt("informe la cantidad de victorias"));
+var empates =  parseInt(prompt("informe la cantidad de empates"));
+var derrota =  parseInt(prompt("informe la cantidad de derrota"));
+
+
+puntototales = (victorias * 3) + empates
+
+imprimir("el total de puntos del equipo es: " + puntototales)
+</script>
+
+<hr>
+
+
+<h2>comparacion entre periodos</h2>
+
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+var puntostotales_ant=28
+
+puntostotales = (victorias * 3) + empates
+
+
+imprimir("el total de puntos del equipo es: " + puntostotales)
+
+document.write("<br> el puntaje del año pasado fue de" + puntostotales_ant+ "<br>");
+if (puntostotales > puntostotales_ant){
+imprimir("el equipo esta mejor que el año pasado");
+}
+if (puntostotales < puntostotales_ant){
+imprimir("el equipo esta peor que el año pasado");
+}
+if (puntostotales == puntostotales_ant){
+imprimir("el equipo esta igual que el año pasado");
+}
+</script>
+
+<hr>
+<h2>mejoras al imc</h2>
+<form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br><br>
+    <label for="peso">Peso (en kg):</label>
+    <input type="number" id="peso" name="peso"><br><br>
+    <label for="altura">altura (en m):</label>
+    <input type="number" id="altura" name="altura"><br><br>
+    <button type="button" onclick="calcularIMC()">Calcular IMC</button><br><br>
+    <label for="imc">IMC:</label>
+    <input type="text" id="imc" name="imc" readonly>
+    <label for="categoria">categoria:</label>
+  <input type="text" id="categoria" name="categoria" readonly>
+  </form>
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+
+
+function calcularIMC() {
+    var nombre = document.getElementById("nombre").value;
+  var peso = parseInt(document.getElementById("peso").value);
+  var altura = parseFloat(document.getElementById("altura").value);
+  var imc = peso / (altura * altura);
+
+document.getElementById("imc").value = imc.toFixed(2);
+
+
+var resultado;
+  if (imc < 18.5) {
+    resultado = "insuficiencia ponderada";
+  } else if (imc >= 18.5 && imc <= 24.9) {
+    resultado = "intervalo normal";
+} else if (imc >= 18.5 && imc <= 24.9) {
+    resultado = "intervalo normal";
+} else if (imc >= 24.9 && imc <= 29.9) {
+    resultado = "sobrepeso o preobesidad";
+  } else {
+    resultado = "obesidad";
+  }
+  document.getElementById("categoria").value = resultado;
+}
+</script>
+                                                                                                                      <hr>
+
+<h2>juego de adivinacion</h2>
+
+<p>Introduce un número entre 1 y 100:</p>
+	<input type="number" id="numero" name="numero">
+	<button type="button" onclick="adivinarNumero()">Adivinar</button>
+    <button type="button" onclick="reiniciarJuego()">Reiniciar</button>
+	<p id="mensaje"></p>
+	<script>
+		var numeroAleatorio; // Declarar la variable del número aleatorio fuera de la función
+
+		// Función para generar un número aleatorio entre 1 y 100
+		function generarNumeroAleatorio() {
+			numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+			console.log(numeroAleatorio); // Para depuración
+		}
+
+		// Llamar a la función para generar el número aleatorio al cargar la página
+		generarNumeroAleatorio();
+
+		function adivinarNumero() {
+			// Obtener el número introducido por el usuario
+			var numeroIntroducido = parseInt(document.getElementById("numero").value);
+
+			// Comprobar si el número es correcto y mostrar un mensaje correspondiente
+			if (isNaN(numeroIntroducido) || numeroIntroducido < 1 || numeroIntroducido > 100) {
+				document.getElementById("mensaje").innerHTML = "Introduce un número válido entre 1 y 100.";
+			} else if (numeroIntroducido == numeroAleatorio) {
+				document.getElementById("mensaje").innerHTML = "¡Has acertado!";
+			} else if (numeroIntroducido < numeroAleatorio) {
+				document.getElementById("mensaje").innerHTML = "El número es mayor.";
+			} else {
+				document.getElementById("mensaje").innerHTML = "El número es menor.";
+			}
+		}
+
+		function reiniciarJuego() {
+			// Llamar a la función para generar un nuevo número aleatorio y borrar el mensaje
+			generarNumeroAleatorio();
+			document.getElementById("mensaje").innerHTML = "";
+		}
+    </script>
+        
+
+<hr>
+<h2>total de invitados VIPs</h2>
+Nuestro amigo Jorge creó un programa simple para calcular el total de invitados de su fiesta,
+ el programa tiene que sumar el total de invitados normales con el total de invitados VIPs. 
+ Ciertamente podría usar la calculadora, pero le pareció relevante ejercer su conocimiento para diseñar un programa. Entonces, Jorge escribió lo siguiente:
+<br>
+<br>
+
+
+ <form>
+    <label for="invitados">Número de invitados:   </label>
+    <input type="number" id="invitados" name="invitados"><br><br>
+    <label for="vips">Número de invitados VIP:</label>
+    <input type="number" id="vips" name="vips"><br><br>
+    <button type="button" onclick="sumar()">Sumar</button>
+    <label for="resultado">Total de invitados:</label>
+    <input type="text" id="resultado" name="resultado" readonly>
+  </form>
+  
+  <script>
+  function sumar() {
+    var invitados = parseInt(document.getElementById("invitados").value);
+    var vips = parseInt(document.getElementById("vips").value);
+    var resultado = invitados + vips;
+    document.getElementById("resultado").value = resultado;
+  }
+  </script>
+
+<hr>
+
+<h2>uso de while (mundiales)</h2>
+Ese mientras está en inglés, sería while, y aquí sería la condición que vamos 
+a colocar. Mientras anhoMundial sea menor o igual al año actual que es 2020,
+que me haga estas iteraciones.
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+var anhomundial = 1930;
+
+while(anhomundial <= 2023){
+    imprimir("hubo un mundial de la fifa en el año" + anhomundial)
+    anhomundial=anhomundial+4
+}
+</script>
+
+
+<hr>
+
+<h2>tablas de multiplicar </h2>
+usemos el for para crear una tabla de multiplicar
+<form>
+    <label for="tabla">Número que se quiere tabla:   </label>
+    <input type="tabla" id="tabla" name="tabla"><br><br>
+    <button type="button" onclick="tablamul()">activar</button>
+  </form>
+
+
+
+<script>
+function tablamul(){
+    var tabla = parseInt(document.getElementById("tabla").value);
+
+    var contador = 1
+while(contador <= 10){
+    resultado = tabla*contador
+    document.write(tabla + "x" + contador + "= " + resultado )
+}
+}
+</script>
+
+<hr>
+<h2>ejemplo chatgpt</h2>
+<form>
+    <label for="numero">Ingresa un número:</label>
+    <input type="number" id="numero" name="numero">
+    <button type="button" onclick="generarTabla()">Generar tabla</button>
+  </form>
+  
+  <script>
+  function generarTabla() {
+    var numero = document.getElementById("numero").value;
+    
+    for (var i = 1; i <= 10; i++) {
+      var resultado = i * numero;
+      document.write(i + " x " + numero + " = " + resultado + "<br>");
+    }
+  }
+  </script>
+
+<script>
+var contador = 1;
+while(contador <= 10) {
+    alert("Contador actual: " + contador);
+    contador = contador + 1;
+}
+</script>
+
+<meta charset="UTF-8">
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    var contador = 2;
+    while(contador <= 100) {
+        imprimir(contador);
+        contador = contador + 2; // incrementar de dos en dos
+    }
+    imprimir("FIN");
+</script>
+
+<hr>
+
+<h1>PROGRAMA JUEGO DE ADIVINACION </h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    var numeroPensado = Math.round(Math.random()*10);
+    var intentos = 3;
+    var contador = 1;
+
+    while (contador <= intentos) {
+        var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"));
+        if (numeroPensado == numeroLanzado){
+            //corregir aquí
+            alert("usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+            break;
+        }
+        else {
+            alert("usted erró");
+        }
+        contador++;
+    }
+    if (numeroPensado == numeroLanzado){
+        //corregir aquí
+        imprimir("usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+    }
+    else {
+        imprimir("usted erró, el número pensado era " + numeroPensado);
+    }
+    imprimir("fin");
+</script> 

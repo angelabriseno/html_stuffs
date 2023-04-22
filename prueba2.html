@@ -1,0 +1,206 @@
+<meta charset="UTF-8">
+
+
+estoy definiendo la edad de christian
+<br>
+<br>
+
+<script>
+    document.write("La edad de christian es... <br>") // nos permite escribir en html desde javascript
+    document.write(25*3) // nos permite realizar operaciones
+    document.write("<br> 25" + "3") //concatenacion de texto
+    document.write("<br> 20" + 15) // concatenar texto mas numero
+ //alert("pop de javascript")
+ //alert('no te libraras de mi')
+</script>
+
+<br>
+################################################################
+<script>
+    document.write("<br> el año de nacimiento de cris es... <br>")
+
+
+
+    document.write("el promedio de edad de juan, pedro y carlos " + ((20+25+30)/3))     
+    document.write("<br>") 
+    document.write((20+25+30)/3)
+ //alert("pop de javascript")
+ //alert('no te libraras de mi')
+</script>
+
+<meta charset="UTF-8">
+<script>
+    document.write("Estoy escribiendo desde el mundo JavaScript en el mundo HTML");
+</script>
+
+<br>
+################################################################
+<br>
+<h1> programacion con variables </h1>
+<br>
+
+
+<script>
+    var  anho =  2020;
+    document.write("<br>juan  tiene: " + (anho-2000));
+    document.write("<br>pedro  tiene: " + (anho-1997));
+    document.write("<br> carlo  tiene: " + (anho-1980));
+</script>
+
+<br>
+################################################################
+<br>
+<h1> Variables</h1>
+
+
+<script>
+    var  anho =  2020;
+    document.write("<br>jimena  tiene: " + (anho-2010));
+    document.write("<br>pamela  tiene: " + (anho-1997));
+    document.write("<br> xio  tiene: " + (anho-1980));
+    
+    promedio = ((anho-2010) + (anho-1980) + (anho-1997))/3;
+
+
+    var nombre1 = "Jimena";
+    var nombre2 = "pamela";
+    var nombre3 = "xio";
+
+    document.write("<br> <br> el promedio de las edades de " + nombre1 + ", " + nombre2 + " y "
+    + nombre3 + " es: " + Math.round(promedio))
+</script>
+
+<br>
+################################################################
+<h1>Tabla del 8</h1>
+<script>
+    var tablaDeMultiplicar = 8;
+    document.write(tablaDeMultiplicar + " veces 1 es " + tablaDeMultiplicar* 1 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 2 es " + tablaDeMultiplicar* 2 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 3 es " + tablaDeMultiplicar* 3 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 4 es " + tablaDeMultiplicar* 4 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 5 es " + tablaDeMultiplicar* 5 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 6 es " + tablaDeMultiplicar* 6 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 7 es " + tablaDeMultiplicar* 7 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 8 es " + tablaDeMultiplicar* 8 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 9 es " + tablaDeMultiplicar* 9 + "<br>");
+    document.write(tablaDeMultiplicar + " veces 10 es " + tablaDeMultiplicar* 10 + "<br>");
+</script>
+
+################################################################
+<br>
+<h1> Funciones </h1>
+<br>
+El concepto de funciones dentro de programación no es más que un código que recibe instrucciones que puede o no 
+<br>
+recibir algunos parámetros de entrada, o sea, inputs de algunas informaciones y nos devuelve un resultado.
+<br>
+
+<script>
+    var  anho =  2020;
+    var saltodelinea = "<br><br>";
+    document.write("juan  tiene: " + (anho-2000));
+    document.write(saltodelinea);
+    document.write("pedro  tiene: " + (anho-1997));
+    document.write(saltodelinea);
+    document.write(" carlo  tiene: " + (anho-1980));
+</script>
+
+
+<br>
+
+
+<h2> usando funciones</h2>
+
+funcion se crea con el codigo <b>function "nombre funcion"() {}</b>
+lo que este dentro de los corchetes sera lo que ejecute la funcion
+
+<script>
+    var  anho =  2020;
+
+    function saltodelinea(){
+        document.write("<br>");
+
+    }
+    saltodelinea();
+    saltodelinea();
+    document.write("juan  tiene: " + (anho-2000));
+    saltodelinea();
+    document.write("pedro  tiene: " + (anho-1997));
+    saltodelinea();
+    document.write(" carlo  tiene: " + (anho-1980));
+</script>
+
+el codigo se escribiio usando el siguiente codigo: <br><br>
+ function saltodelinea(){ <br>
+     document.write("br")};
+
+<h2>funciones con argumentos</h2>
+
+o que vamos a hacer es, cada vez que yo llamo a imprimir, aquí en mi código, va a llamar a esta función,
+ a esta línea de códigos, y aquí lo que va a hacer es imprimir alguna cosa. Voy a colocar eso de momento 
+ para que entendamos el concepto.
+
+<br>
+codigo:
+<br>
+<b>function imprimir(x){
+    document.write(x)
+}</b>
+<br>
+
+ <script>
+    function imprimir(x){
+        document.write(x)
+    }
+
+    imprimir('hola mundo')
+ </script>
+
+<h2> funcion anidada</h2>
+
+agregar una funcion dentro de otra funcion
+<script>
+
+function saltarLinea() {
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+</script>
+
+<big>
+    esto es grande
+</big>
+
+<hr> 
+hr crea lineas de separacion
+<hr>
+
+<meta charset="UTF-8">
+<script>
+
+function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+    document.write("<hr>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write("<big>" + frase + "</big>");
+    saltarLinea();
+}
+
+
+imprimir("resultado")
+imprimir("resultados")
+</script>
+
+

@@ -1,0 +1,110 @@
+
+<meta charset="UTF-8">
+
+<h1>calculo de imc</h1>
+
+el uso de <b>return()</b> nos permite definir que elementos vamos a regresar cuando se llame a la funcion
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+//peso = 71
+//altura = 1.72
+//imc = peso / (altura * altura)
+
+//imprimir("El IMC de christian es:"+ math.round(imc))
+
+
+//function imc(peso, altura){
+  //  indicemasa = peso / (altura * altura)
+
+    //return(indicemasa)
+//}
+
+//imcc = imc(72, 1.72)
+//imprimir(" El IMC de la persona es:"+ imcc)
+
+
+function calimc(peso, altura, nombre){
+    imc = peso / (altura * altura);
+    imprimir(" El IMC de "+ nombre+" es: "+ imc);
+}
+
+document.write("<br>");
+document.write("<br>");
+calimc(80,1.76, 'felipe');
+calimc(60, 1.55, 'alondra');
+</script>
+
+<hr>
+
+<h2>multiples argumentos</h2>
+Entonces qué vamos a hacer? Vamos a explicar el concepto de return. Cuando yo llamo a mi función y
+ le paso parámetros y mi función está esperando esos parámetros, hace el cálculo correcto y me retorna alguna cosa, 
+ me tiene que retornar algún valor, en este caso el índice de masa corporal. 
+
+
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+
+function calimc(peso, altura){
+    imc = peso / (altura * altura);
+    return imc
+}
+
+var imccris = calimc(71, 1.72);
+var imcfelip = calimc(76, 1.78);
+document.write("<br>");
+document.write("<br>");
+
+imprimir('el promedio de imc de los individuos es: ' + (imccris+imcfelip)/2)
+</script>
+
+<hr>
+
+<h2>interaccion del usuario</h2>
+
+<script>
+    function saltarLinea() {
+     // saltando cinco lineas
+    document.write("<br>");    
+    document.write("<br>");    
+    document.write("<br>");
+}
+
+function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+}
+
+
+function calimc(peso, altura){
+    imc = peso / (altura * altura);
+    return imc
+}
+nombreinformado = prompt("como se llama?")
+pesoinformado = prompt("ingrese su peso " + nombreinformado)
+alturainformado =prompt("ingrese su altura (mts) " + nombreinformado + " 1.72")
+
+imprimir(" su IMC "+ nombreinformado +" es: "+ imc);
+</script>

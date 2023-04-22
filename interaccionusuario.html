@@ -1,0 +1,114 @@
+<h2>adivina el numero secreto</h2>
+<meta charset="UTF-8">
+vamos a colocar un input y hacerlo eficiente para el usuario, con los comandos <b>focus()</b> que
+nos permite llevar el puntero a cierto elemento, en este caso la casilla input
+y tambien usar la conexion con javascript de los input que se tienen en el <b>html</b>
+
+tambien se hizo una introduccion a los arrays, y como se pueden trabajar, estos tienen un indice 
+que inicia en 0, como en python, ahora bien podemos recorrerlos con un for.
+
+se agregaron 4 posibles numeros secretos 
+<br>
+<br>
+<br>
+<br>
+
+
+<input/>
+<button>jugar</button>
+
+<script>
+	//var secreto = Math.round(Math.random()*10); 
+    function aleatorio (){
+        return Math.round(Math.random()*10)
+    }
+
+    function sorteonumeros(cantidad){
+        var secretos = [];
+        var i=1;
+        while (i <= cantidad){
+            var numeroAleatorio = aleatorio();
+			console.log(numeroAleatorio)
+			var encontrado = false;
+
+          if (numeroAleatorio != 0){
+				for (var posicion = 0; posicion < secretos.length; posicion++) {
+					if (numeroAleatorio == secretos[posicion]) {
+						encontrado = true;
+						break;
+					}
+				}
+				
+				if (encontrado == false) {
+					secretos.push(numeroAleatorio);
+					i++;
+				}
+
+			}
+			
+		
+		}	
+
+		return secretos
+
+	}
+	var secretos = sorteonumeros(4);
+
+    console.log(secretos);
+
+	var input = document.querySelector("input");
+	input.focus();
+
+	function verificar() {
+
+		var encontrado = false;
+
+		for(var posicion = 0; posicion < secretos.length; posicion++){
+			
+			if (parseInt(input.value) == secretos[posicion]) {
+
+				alert("Usted acertó");
+				encontrado = true;
+				break; 
+
+			}
+
+		}
+
+		if (encontrado == false) {
+
+			alert("Uster erró");
+
+		}
+				
+		input.value = "";
+		input.focus();
+
+	} 
+
+	var button = document.querySelector("button");
+	button.onclick = verificar;
+
+
+</script>
+
+<hr>
+<h2>mostrar el texto que se escribió</h2>
+
+<form>
+    <label for="texto">Ingresa un texto:</label>
+    <input type="text" id="texto" name="texto">
+    <button type="button" onclick="mostrarTexto()">mostrar texto</button>
+</form>
+
+<script>
+    function mostrarTexto() {
+        var texto = document.getElementById("texto").value;
+        alert(texto);
+    }
+</script>
+
+<hr> <!-- part3 de los ejercicios#################################################################-->
+
+
+

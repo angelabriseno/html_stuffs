@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Graficas interaccion</title>
+</head>
+<body>
+
+  <h2>Graficas interaccion</h2>
+
+  <form>
+    <label for="filas">cantidad de filas:   </label>
+    <input type="number" id="filas" name="filas"><br><br>
+    <label for="columnas">cantidad de columnas:</label>
+    <input type="number" id="columnas" name="columnas"><br><br>
+    <button type="button" onclick="dibujarcuadrado()">dibujar</button>
+  </form>
+  <br>
+  <canvas id="canvas1" width="10000" height="10000"></canvas>
+  
+  <script>
+    function dibujarcuadrado() {
+      var filas = parseInt(document.getElementById("filas").value);
+      var columnas = parseInt(document.getElementById("columnas").value);
+      var pantalla = document.getElementById("canvas1");
+      var pincel = pantalla.getContext("2d");
+
+      pincel.fillStyle = "green";
+      pincel.strokeStyle = "black";
+      
+      for(var i = 0; i < columnas; i++) {
+        for(var j = 0; j < filas; j++) {
+          pincel.fillRect(50 * i, 50 * j, 50, 50);
+          pincel.strokeRect(50 * i, 50 * j, 50, 50);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
